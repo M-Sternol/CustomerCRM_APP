@@ -4,8 +4,8 @@ namespace DataStorage
 {
     public static class FileLocations
     {
-        private static string BaseDirectory => @"C:\Users\Mariu\OneDrive\Pulpit\CustomerCRM\CustomerCRM\DataStorage\FileDirectory\";
-        private static string LogDirectory => @"C:\Users\Mariu\OneDrive\Pulpit\CustomerCRM\CustomerCRM\DataStorage\LoggApp\";
+        private static string BaseDirectory => Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "FileDirectory");
+        private static string LogDirectory => Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "LoggMessage");
         public static string GetFilePath(string fileName)
         {
             return Path.Combine(BaseDirectory, fileName);
