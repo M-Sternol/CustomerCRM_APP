@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CustomerCRM.Domain.Services.LoadFromPathFile
+namespace CustomerCRM.App.Services.LoadFromPathFile
 {
     public class AdministratorLoader
     {

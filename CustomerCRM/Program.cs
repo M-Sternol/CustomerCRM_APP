@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Security.Cryptography.X509Certificates;
 using DataStorage;
-using LoginSystem = CustomerCRM.App.LoginManagement.LoginSystem;
-using Registration = CustomerCRM.App.Registration.Registration;
+using CustomerCRM.App.LoginManagement;
+using CustomerCRM.App.Registration;
 using CustomerCRM.Domain.Services.Security;
 using DataStorage.Raport;
 
@@ -10,7 +10,6 @@ namespace CustomerCRM
 {
     internal class Program
     {
-        private static IServicePasswordHasher passwordHasher;
 
         static void Main(string[] args)
         {
@@ -32,16 +31,12 @@ namespace CustomerCRM
                         break;
                     case "2":
                         Console.Clear();
-                        Registration RegistrationService = new Registration(passwordHasher);
-                        RegistrationService.Register();
+                        Registration registrationService = new Registration();
+                        registrationService.Register();
                         break;
                     case "0":
                         Console.WriteLine("Do Zobaczenia!");
                         isRunning = false;
-                        break;
-                    case "raport":
-                        ReportGenerator reportGenerator = new ReportGenerator();
-                        reportGenerator.GenerateReport();
                         break;
                     default:
                         Console.Clear();

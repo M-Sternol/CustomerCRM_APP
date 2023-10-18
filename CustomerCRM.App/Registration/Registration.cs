@@ -12,12 +12,6 @@ namespace CustomerCRM.App.Registration
     {
         private bool registrationCancelled;
         private string id = IDGenerator.GenerateUniqueID();
-        private readonly IServicePasswordHasher passwordHasher;
-
-        public Registration(IServicePasswordHasher passwordHasher)
-        {
-            this.passwordHasher = passwordHasher;
-        }
 
         public void Register()
         {
